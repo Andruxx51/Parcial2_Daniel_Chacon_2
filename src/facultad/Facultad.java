@@ -3,9 +3,6 @@ package facultad;
 import plan.PlanEstudios;
 import java.util.ArrayList;
 
-/**
- * Facultad que AGREGA planes de estudio.
- */
 public class Facultad {
 
     private String nombre;
@@ -16,17 +13,18 @@ public class Facultad {
         this.planes = new ArrayList<>();
     }
 
-    /** Agrega un plan ya existente (agregación). */
     public void agregarPlan(PlanEstudios plan) {
-        // TODO: implementar
+        if (plan != null && !planes.contains(plan)) {
+            this.planes.add(plan);
+        }
     }
 
-    /**
-     * Total de cursos de todos los planes de la facultad.
-     */
     public int totalCursos() {
-        // TODO: implementar
-        return 0;
+        int total = 0;
+        for (PlanEstudios plan : planes) {
+            total += plan.getCursos().size();
+        }
+        return total;
     }
 
     public String getNombre() { return nombre; }

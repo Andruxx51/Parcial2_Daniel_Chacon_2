@@ -2,10 +2,6 @@ package servicios;
 
 import personas.Estudiante;
 
-/**
- * Historial académico derivado de un estudiante.
- * Se usa como DEPENDENCIA desde Recomendador.
- */
 public class HistorialAcademico {
 
     private Estudiante estudiante;
@@ -14,16 +10,18 @@ public class HistorialAcademico {
         this.estudiante = estudiante;
     }
 
-    /** Promedio del estudiante. */
     public double promedio() {
-        // TODO: implementar
-        return 0;
+        if (estudiante == null) {
+            return 0.0;
+        }
+        return estudiante.promedio();
     }
 
-    /** Cantidad de cursos inscritos. */
     public int cantidadCursos() {
-        // TODO: implementar
-        return 0;
+        if (estudiante == null || estudiante.getInscritos() == null) {
+            return 0;
+        }
+        return estudiante.getInscritos().size();
     }
 
     public Estudiante getEstudiante() { return estudiante; }

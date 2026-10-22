@@ -3,7 +3,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import cursos.*;
 import personas.Estudiante;
 
-public class EstudianteTest {
+public class    EstudianteTest {
 
     @Test
     void registrarNotasYCalcularPromedio() {
